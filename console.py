@@ -16,8 +16,8 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
-    """ Holberton command prompt to access models data """
-    prompt = '(hbnb) '
+    """ALX AirBnB command prompt to access models data """
+    prompt = '\n Type \'help\' to begin. \n hbnb:> '
     my_dict = {
         "BaseModel": BaseModel,
         "User": User,
@@ -33,12 +33,12 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_quit(self, arg):
-        """ Close program and saves safely data """
+        """ Saves the data and closes the program safely """
         return True
 
     def do_EOF(self, arg):
-        """ Close program and saves safely data, when
-        user input is CTRL + D
+        """ Saves the data and closes the program when
+        you press CTRL + D
         """
         print("")
         return True
@@ -65,7 +65,7 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         """
         Prints the string representation of an instance
-        based on the class name and id
+        based on the class NAME and ID
         Structure: show [class name] [id]
         """
         tokens = shlex.split(arg)
@@ -179,7 +179,7 @@ class HBNBCommand(cmd.Cmd):
         """
         Updates an instance based on the class name and
         id by adding or updating attribute
-        (save the change into the JSON file).
+        (saves the changes into the JSON file).
         Structure: update [class name] [id] [dictionary]
         """
         if not arg:
